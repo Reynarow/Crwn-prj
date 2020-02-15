@@ -7,8 +7,11 @@
   
     .logo-container {
       height: 100%;
-      width: 70px;
-      padding: 25px;
+      width:70px;
+      padding: 7px;
+      margin-bottom: 10px;
+
+      
    }
   
     .options {
@@ -18,9 +21,11 @@
       align-items: center;
       justify-content: flex-end;
       margin-top: 15px;
+      font-size: 20px;
   
       .option {
         padding: 10px 15px;
+       
       }
     }
   }
