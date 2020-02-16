@@ -21,7 +21,11 @@ class SignIn extends React.Component {
 
         event.preventDefault();
         const {email,password }= this.state;
-    
+
+        if(this.props.currentUser){
+            alert("you are already signed in :)")
+            return
+        }
        try {
            await auth.signInWithEmailAndPassword(
                email,

@@ -4,10 +4,10 @@ import SignUp from '../../Components/Sign-up/Sign-up.component';
 import './Sign-in-Sign-up.styles.scss';
 
 
-const SignInSignUpPage = () =>(
+const SignInSignUpPage = ({currentUser}) =>(
 
     <div className="sign-in-sign-up">
-        <SignIn />
+        <SignIn currentUser={currentUser}/>
         <SignUp />
     </div>
 
