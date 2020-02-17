@@ -6,8 +6,11 @@
 
     .buttons{
         
-       margin: 10px auto;
-      
-       padding-left: 160px;
+        display: flex;
+        justify-content: space-between;
+        width: 65%;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
     }
 }

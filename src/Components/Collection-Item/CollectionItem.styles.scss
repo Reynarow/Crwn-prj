@@ -4,6 +4,11 @@
     flex-direction: column;
     height: 350px;
     align-items: center;
+    
+    transition: all .3s ease-in-out;
+    &:hover{
+      transform: scale(1.07);
+    }
   
     .image {
       width: 100%;
@@ -11,6 +16,9 @@
       background-size: cover;
       background-position: center;
       margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      backface-visibility: hidden;
     }
   
     .collection-footer {

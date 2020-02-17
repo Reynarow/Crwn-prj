@@ -5,9 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid transparent;
     margin: 0 7.5px 15px;
     overflow: hidden;
+    border-radius: 5px;
 
     
    &:hover{
@@ -50,6 +51,7 @@
       align-items: center;
       justify-content: center;
       border: 1px solid black;
+      border-radius: 10px;
       background-color: white;
       opacity: .6;
   
