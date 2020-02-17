@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import './Sign-in.styles.scss';
 import FormInput from '../form-input/Form-input.component';
 import CustomButton from '../Custom-button/Custom-button.compnent';
@@ -22,10 +21,6 @@ class SignIn extends React.Component {
         event.preventDefault();
         const {email,password }= this.state;
 
-        if(this.props.currentUser){
-            alert("you are already signed in :)")
-            return
-        }
        try {
            await auth.signInWithEmailAndPassword(
                email,
@@ -96,12 +91,8 @@ class SignIn extends React.Component {
 
 
 }
-const mapStatetoProps = state => ({
 
-    currentUser: state.user.currentUser
-    
-    })
 
-export default connect(mapStatetoProps)(SignIn);
+export default SignIn;
 
 
