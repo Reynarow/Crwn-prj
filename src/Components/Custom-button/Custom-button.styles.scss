@@ -18,6 +18,8 @@
   outline: none;
   margin: 7.5px 10px;
   backface-visibility: hidden;
+  align-items: center;
+  justify-content: center;
 
 
   &:hover {
@@ -25,8 +27,13 @@
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.432);
   }
+  &.inverted{
+    background-color: white;
+    color:black;
+  }
   &:active {
     transform: translateY(0px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.432);
   } 
   &.google-sign-in{
     background-color:#4285f4 ;
