@@ -10,6 +10,8 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    align-items: center;
+    justify-content: center;
     ::-webkit-scrollbar {
       width: 7px;
     
@@ -22,7 +24,13 @@
       flex-direction: column;
       overflow: auto;
     }
-  
+
+    .items-price{
+      position: relative;
+      display: block;
+      font-weight: 500;   
+    }
+    
     button {
       margin-top: 5px;
     }
