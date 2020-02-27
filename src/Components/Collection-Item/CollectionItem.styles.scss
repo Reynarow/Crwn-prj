@@ -25,7 +25,7 @@
       position: absolute;
       top: 255px;
       display: none;
-     
+      margin: 0 auto;
       &:hover{
         transform: none;
        box-shadow: none;
@@ -40,6 +40,7 @@
       .custom-button{
         display: flex;
         opacity: .85;
+        
       }
     }
 
