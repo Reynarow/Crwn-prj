@@ -1,7 +1,9 @@
 .collection-item {
-    min-width: 22%;
+    min-width: 20vw;
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+    margin: 5px 7px 10px  7px;
     height: 350px;
     align-items: center;
     position: relative;

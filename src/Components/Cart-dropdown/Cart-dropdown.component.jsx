@@ -18,6 +18,7 @@ const CartDropdown = ({ cartItems, sumItems, history, dispatch }) => (
             {
                 cartItems.length ?
                     cartItems.map(cartItem => <CartItems key={cartItem.id} item={cartItem} />)
+                    
                     :
                     <span className="no-item">there is no item yet reza :)</span>
             }
