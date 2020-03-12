@@ -9,8 +9,8 @@ import './CollectionPage.styles.scss';
 
 
 
-const CollectionPage = ({ collection}) => {
-    console.log (collection)
+const CollectionPage = ({ collection , ...props}) => {
+    console.log(props)
     const {items , title} = collection
     return (
         <div className="collection-page">

@@ -7,12 +7,13 @@ import {signInWithGoogle , auth} from '../firebase/firebase-utils';
 
 
 class SignIn extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
         this.state = {
             email: "",
             password: "",
+            loading:false,
         }
     }
 
@@ -22,6 +23,7 @@ class SignIn extends React.Component {
         const {email,password }= this.state;
 
        try {
+           this.setState({loading:true})
            await auth.signInWithEmailAndPassword(
                email,
                password 
@@ -29,6 +31,7 @@ class SignIn extends React.Component {
            this.setState({
             email: "",
             password: "",
+            loading:false,
            })
        } catch (error) {
            console.log(alert(error.message));
@@ -49,6 +52,7 @@ class SignIn extends React.Component {
     }
 
     render() {
+        const{loading} =this.state;
         return (
 
             <div className="sign-in">
@@ -75,7 +79,7 @@ class SignIn extends React.Component {
                     />
 
                     <div className="buttons">
-                    <CustomButton type="submit">Submit Form</CustomButton>
+                    <CustomButton type="submit" isLoading={loading}>Submit Form</CustomButton>
                     <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with google</CustomButton>
 
                     </div>

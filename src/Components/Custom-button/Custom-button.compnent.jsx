@@ -1,16 +1,14 @@
 import React from 'react';
-import './Custom-button.styles.scss';
+import {CustomButtonContainer , SpinnerIcon} from './Custom-button-styles';
 
 
-const CustomButton = ({ children, isGoogleSignIn, inverted, ...otherProps }) => (
-    <button className={
-        `${isGoogleSignIn ? 'google-sign-in' : ''} 
-         ${inverted ? 'inverted' : ''}
-        custom-button `} {...otherProps}>
-
-        {children}
-
-    </button>
+const CustomButton = ({ isLoading,children,...props}) => (
+    <CustomButtonContainer {...props}>
+        {
+            isLoading? <SpinnerIcon/>:children
+        }
+     
+    </CustomButtonContainer>
 
 );
 

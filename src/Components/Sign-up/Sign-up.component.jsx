@@ -15,7 +15,8 @@ class SignUp extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            loading:false,
         }
 
     }
@@ -35,6 +36,7 @@ class SignUp extends React.Component {
             return;
         }
         try {
+            this.setState({loading:true})
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             await createUserProfileDocument(user, { displayName });
         } catch (error) { 
@@ -44,11 +46,13 @@ class SignUp extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            loading:false,
         })
     }
 
     render() {
+        const {loading} = this.state
         return (
             <div className="sign-up">
                     <h2 className="title">I dont have account</h2>
@@ -88,7 +92,7 @@ class SignUp extends React.Component {
                         required
                     />
                     <div className='buttons'>
-                        <CustomButton type="submit"  >Sign UP</CustomButton>
+                        <CustomButton type="submit" isLoading={loading}  >Sign UP</CustomButton>
                     </div>
 
                 </form>
