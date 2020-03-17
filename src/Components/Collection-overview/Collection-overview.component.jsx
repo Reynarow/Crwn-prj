@@ -11,7 +11,7 @@ import './Collection-overview.styles.scss';
 
 
 const CollectionOverview = ({ collections }) => {
-    console.log(collections)
+ 
     return(
 
     <div className="collection-overview">

@@ -12,14 +12,14 @@ import App from './App';
 import './index.css';
 
 
-import  {store,persistor} from "./Redux/store";
+import { store, persistor } from "./Redux/store";
 
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter >
             <PersistGate persistor={persistor}>
-            <ScrollToTopComponent/>
+                <ScrollToTopComponent />
                 <App />
             </PersistGate >
         </BrowserRouter>

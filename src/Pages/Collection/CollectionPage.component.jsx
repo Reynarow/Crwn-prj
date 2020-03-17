@@ -10,14 +10,14 @@ import './CollectionPage.styles.scss';
 
 
 const CollectionPage = ({ collection , ...props}) => {
-    console.log(props)
+    console.log(collection)
     const {items , title} = collection
     return (
         <div className="collection-page">
             <h2 className="title">{title}</h2>
             <div className="items">
                 {
-                    items.map(item => <CollectionItem item={item} id={item.id} />)
+                    items.map(item => <CollectionItem item={item} key={item.id}  />)
                 }
             </div>
         </div>

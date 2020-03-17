@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import CollectinOverview from '../../Components/Collection-overview/Collection-overview.component';
 import CollectionPage from '../Collection/CollectionPage.component';
+import  CollectionItemDetails from '../../Components/CollectionItemDetails/CollectionItemDetails.component'
 import { firestore, convertCollectiosSnapshotToMap } from '../../Components/firebase/firebase-utils';
 
 import { updateCollections } from "../../Redux/shop/shop.action";
@@ -29,7 +30,7 @@ class ShopPage extends React.Component {
                         const collectionMap =   convertCollectiosSnapshotToMap(snapShot);
                         updateCollections(collectionMap)
                         this.setState({loading:false})
-                        console.log(collectionMap)
+                      
                 })
         }
         render() {
@@ -37,8 +38,11 @@ class ShopPage extends React.Component {
                 const{loading} =this.state;
                 return (
                         <div>
-                                <Route exact path={`${match.path}`} render={(props)=> <CollectinOverviewWithSpinner isLoading={loading} {...props} /> } />
-                                <Route path={`${match.path}/:collectionId`} render={(props)=> <CollectionPageWithSpinner isLoading={loading} {...props}  /> }/>
+                                <Route exact path={`${match.path}`} render={(props)=>
+                                         <CollectinOverviewWithSpinner isLoading={loading} {...props} /> } />
+                                <Route exact path={`${match.path}/:collectionId`} 
+                                render={(props)=> <CollectionPageWithSpinner isLoading={loading} {...props}  /> }/>
+                                <Route path={`${match.path}/:collectionId/:id`} component={CollectionItemDetails} />
                         </div>
 
                 )

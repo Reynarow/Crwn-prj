@@ -13,7 +13,14 @@ export const selectShopCollections = createSelector(
 
 export const selectShopCollectionsArray = createSelector(
     selectShopCollections,
-    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
+    collections => {
+        if (collections) {
+           let  arrayTemp= ['womens','mens','jackets','sneakers','hats'];
+         return  arrayTemp.map(key => collections[key])
+        }else{
+            return []
+        }
+    }
 )
 
 export const selectCollection = (collectionUrlParams) =>
@@ -21,3 +28,9 @@ export const selectCollection = (collectionUrlParams) =>
         selectShopCollections,
         collections => (collections ? collections[collectionUrlParams] : null)
     )
+
+ export const selectItem = (collectionUrlParams,collectionId) =>
+ createSelector(
+     selectShopCollections,
+    collections=>collections? (collections[collectionUrlParams]).items.find(obj => obj.id===parseInt(collectionId) ): null
+ )   

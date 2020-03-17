@@ -12,7 +12,7 @@ const getButtonStyles = (props) =>{
 
 
 export const CustomButtonContainer = styled.button`
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   width: 80%;
   height: 50px;
   letter-spacing: 0.5px;
