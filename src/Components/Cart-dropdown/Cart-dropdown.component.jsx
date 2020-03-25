@@ -11,9 +11,9 @@ import { connect } from 'react-redux';
 import './Cart-dropdown.styles.scss';
 
 
-const CartDropdown = ({ cartItems, sumItems, history, dispatch }) => (
+const CartDropdown = ({ cartItems, sumItems, history, dispatch,isHidden }) => (
 
-    <div className="cart-dropdown">
+    <div className={`cart-dropdown ${isHidden? '':'show'}`}>
         <div className="cart-items">
             {
                 cartItems.length ?

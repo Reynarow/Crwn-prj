@@ -9,8 +9,9 @@ import "./CollectionItem.styles.scss";
 const CollectionItem = ({ item, addItems, match, history, title }) => {
     const { imageUrl, name, price } = item;
     return (
-        <div onClick={() => history.push(`${match.url}/${title?`${title.toLowerCase()}/`:'' } ${item.id}`)} className="collection-item">
+        <div  className="collection-item">
             <div
+                onClick={() => history.push(`${match.url}/${title?`${title.toLowerCase()}/`:'' } ${item.id}`)}
                 className="image"
                 style={{
                     backgroundImage: `url(${imageUrl})`
