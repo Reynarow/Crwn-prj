@@ -17,8 +17,10 @@ export const ItemContainer = styled.div`
 
 export const ImageContainer = styled.div `
    display:flex; 
-   width:30%;
-    height:65%;
+    width:30%;
+    height:65vh;
+    min-height:300px;
+    min-width:200px;
     border-radius:15px;
     margin:auto;
     overflow:hidden;

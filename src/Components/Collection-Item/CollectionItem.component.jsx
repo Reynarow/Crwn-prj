@@ -1,22 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CustomButton from '../Custom-button/Custom-button.compnent';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { addItems } from '../../Redux/cart/cart.action';
 import "./CollectionItem.styles.scss";
 
 
-const CollectionItem = ({ item, addItems, match, history, title }) => {
+const CollectionItem = ({ item, addItems, match, title }) => {
     const { imageUrl, name, price } = item;
     return (
         <div  className="collection-item">
-            <div
-                onClick={() => history.push(`${match.url}/${title?`${title.toLowerCase()}/`:'' } ${item.id}`)}
-                className="image"
+            
+            <Link
+             to= {`${match.url}/${title?`${title.toLowerCase()}/`:'' } ${item.id}`}                   
+             className="image"
                 style={{
                     backgroundImage: `url(${imageUrl})`
                 }}
             />
+          
             <div className="collection-footer">
                 <span className="name">{name}</span>
                 <span className="price">${price}</span>

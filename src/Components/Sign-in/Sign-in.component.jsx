@@ -1,9 +1,11 @@
 import React from 'react';
 import './Sign-in.styles.scss';
+import { connect } from 'react-redux';
 import FormInput from '../form-input/Form-input.component';
 import CustomButton from '../Custom-button/Custom-button.compnent';
-import {signInWithGoogle , auth} from '../firebase/firebase-utils';
-
+import {createStructuredSelector} from 'reselect';
+import {selectSignInLoading} from '../../Redux/user/user.selector'
+import { googleSignInStart, emailSignInStart } from '../../Redux/user/user.action'
 
 
 class SignIn extends React.Component {
@@ -13,46 +15,34 @@ class SignIn extends React.Component {
         this.state = {
             email: "",
             password: "",
-            loading:false,
         }
     }
 
-    handleSubmit = async(event) => {
+    handleSubmit = async (event) => {
 
         event.preventDefault();
-        const {email,password }= this.state;
+        const { emailSignInStart} = this.props;
+        const { email, password } = this.state;
 
-       try {
-           this.setState({loading:true})
-           await auth.signInWithEmailAndPassword(
-               email,
-               password 
-           )
-           this.setState({
-            email: "",
-            password: "",
-            loading:false,
-           })
-       } catch (error) {
-           console.log(alert(error.message));
-       }
-
+      
+        await emailSignInStart(email,password);
 
         this.setState({
-            email: '', password: '',
+            email: '', password: '', 
         })
     }
 
 
     handleChange = (event) => {
-        const { value, name } = event.target;
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         })
     }
 
     render() {
-        const{loading} =this.state;
+        const { loading } = this.props;
+        const { googleSignInStart } = this.props;
         return (
 
             <div className="sign-in">
@@ -79,11 +69,11 @@ class SignIn extends React.Component {
                     />
 
                     <div className="buttons">
-                    <CustomButton type="submit" isLoading={loading}>Submit Form</CustomButton>
-                    <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with google</CustomButton>
+                        <CustomButton type="submit" isLoading={loading}>Submit Form</CustomButton>
+                        <CustomButton type="button" onClick={googleSignInStart} isGoogleSignIn>Sign in with google</CustomButton>
 
                     </div>
-                    
+
 
                 </form>
 
@@ -97,6 +87,15 @@ class SignIn extends React.Component {
 }
 
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+    googleSignInStart: () => dispatch(googleSignInStart()),
+    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
+})
+
+const mapStateToProps = createStructuredSelector({
+    loading : selectSignInLoading
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
 
 

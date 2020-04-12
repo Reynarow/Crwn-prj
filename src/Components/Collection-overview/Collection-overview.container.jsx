@@ -8,7 +8,7 @@ import CollectionsOverview from './Collection-overview.component';
 
 
 
-const mapStateToProps = () => createStructuredSelector({
+const mapStateToProps = createStructuredSelector({
     isLoading:selectIsCollectionFetching,
 })
 

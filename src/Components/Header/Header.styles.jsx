@@ -17,7 +17,7 @@ const OptionContainerStyles = css`
         } 
 `
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.nav`
     height: 70px;
     width: 100%;
     display: flex;
@@ -36,7 +36,7 @@ export const LogoContainer = styled(Link)`
         transform: scale(1.2);
       }
 `
-export const OptionsContainer = styled.div`
+export const OptionsContainer = styled.ul`
       width: 50%;
       height: 100%;
       display: flex;
@@ -46,6 +46,8 @@ export const OptionsContainer = styled.div`
       font-size: 20px;
 `
 
+
 export const OptionLink = styled(Link) `
+        
      ${OptionContainerStyles}
 `

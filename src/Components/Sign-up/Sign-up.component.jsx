@@ -1,8 +1,12 @@
 import React from 'react';
 import FormInput from '../form-input/Form-input.component';
 import CustomButton from "../Custom-button/Custom-button.compnent";
-import { auth, createUserProfileDocument } from '../firebase/firebase-utils';
+import { signUpStart } from '../../Redux/user/user.action'
 import "./Sign-up.styles.scss";
+
+import { createStructuredSelector } from 'reselect'
+import { connect } from 'react-redux';
+import { selectSignUpLoading } from '../../Redux/user/user.selector';
 
 
 
@@ -16,7 +20,7 @@ class SignUp extends React.Component {
             email: '',
             password: '',
             confirmPassword: '',
-            loading:false,
+
         }
 
     }
@@ -28,6 +32,7 @@ class SignUp extends React.Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
+        const { signUpStart } = this.props;
 
         const { displayName, email, password, confirmPassword } = this.state;
 
@@ -35,28 +40,20 @@ class SignUp extends React.Component {
             alert("check your passwords don't match :)");
             return;
         }
-        try {
-            this.setState({loading:true})
-            const { user } = await auth.createUserWithEmailAndPassword(email, password);
-            await createUserProfileDocument(user, { displayName });
-        } catch (error) { 
-            console.error(error)
-        }
-        this.setState({
-            displayName: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-            loading:false,
-        })
+
+
+        signUpStart({ email, password, displayName })
+
+
+      
     }
 
     render() {
-        const {loading} = this.state
+        const { loading } = this.props
         return (
             <div className="sign-up">
-                    <h2 className="title">I dont have account</h2>
-                    <span className="subtitle">Sign up with your email and password</span>
+                <h2 className="title">I dont have account</h2>
+                <span className="subtitle">Sign up with your email and password</span>
                 <form onSubmit={this.handleSubmit} >
                     <FormInput
                         type="text"
@@ -101,7 +98,16 @@ class SignUp extends React.Component {
     }
 }
 
+const mapStateToProps = createStructuredSelector({
+    loading: selectSignUpLoading
+})
 
 
 
-export default SignUp;
+const mapDispatchToProps = dispatch => ({
+    signUpStart: ({ email, password, displayName }) => dispatch(signUpStart({ email, password, displayName }))
+})
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
