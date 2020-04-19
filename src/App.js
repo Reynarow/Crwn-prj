@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { Redirect, Route, Switch  } from "react-router-dom";
 
 import HomePage from "./Pages/HomePage/HomePage.component";
@@ -24,42 +24,15 @@ import './App.css';
 
 
 
-class App extends React.Component {
 
+const  App  = ({checkUserSession,currentUser}) =>{
 
-
-
-  componentDidMount() {
-
-    const {checkUserSession} = this.props;
-    checkUserSession();
-
-
-
-    // this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
-    //   const { setCurrentUser, collection } = this.props;
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-
-    //     userRef.onSnapshot(snapShot => {
-
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data()
-    //       })
-
-    //     })
-    //   }
-    //   setCurrentUser(userAuth);
-    //   addCollectionAndItems('collections', collection.map(({ items, title }) => ({ items, title })))
-    // })
-
-  }
-
+useEffect(() =>{
+  checkUserSession()
+},[checkUserSession])
   
 
-  render() {
-    const {currentUser} = this.props
+
     return (
       <div>
         <Header />
@@ -75,7 +48,7 @@ class App extends React.Component {
     );
   }
 
-}
+
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,

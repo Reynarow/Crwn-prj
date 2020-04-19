@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React , {useEffect} from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 
 
@@ -17,27 +17,24 @@ import { connect } from 'react-redux';
 
 
 
-class ShopPage extends React.Component {
+const ShopPage = ({ fetchCollectionsStart , match }) => {
 
-        componentDidMount() {
-
-                const { fetchCollectionsStart } = this.props;
-                fetchCollectionsStart();
-        }
-        render() {
-                const {  match } = this.props;
+       useEffect(()=>{
+               fetchCollectionsStart()
+       }, [fetchCollectionsStart])
 
                 return (
                         <div>
-                                <Route exact path={`${match.path}`} component={CollectinOverviewContainer} />
-                                <Route exact path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
-                                <Route path={`${match.path}/:collectionId/:id`} component={CollectionItemDetailsContainer} />
+                                <Switch>
+                                        <Route exact path={`${match.path}`} component={CollectinOverviewContainer} />
+                                        <Route exact path={`${match.path}/:collectionId`} component={CollectionPageContainer} />
+                                        <Route path={`${match.path}/:collectionId/:id`} component={CollectionItemDetailsContainer} />
+                                </Switch>
                         </div>
 
                 )
         }
 
-}
 
 
 

@@ -20,7 +20,7 @@ const CartItems = ({ item, removeItem }) => {
                 </div>
 
             </div>
-            <div className="after"></div>
+            <div className="line"></div>
         </div>
     )
 }
