@@ -5,6 +5,11 @@ export const toggleCartHidden = () => ({
     type: cartActionTypes.TOGGEL_CARD_HIDDEN
 })
 
+export const hiddenCartAtFirst = () =>({
+    type:cartActionTypes.HIDDEN_CART_AT_FIRST,
+
+})
+
 
 export const addItems = (item) => ({
     type: cartActionTypes.ADD_ITEMS,

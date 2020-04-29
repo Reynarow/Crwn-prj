@@ -4,7 +4,7 @@
     flex-direction: column;
     flex: 1 1 20vw;
     margin: 5px 7px 10px;
-    height: 350px;
+    height: 450px;
     align-items: center;
     position: relative;
     transition: all .3s ease-in-out;
@@ -25,7 +25,7 @@
     
     .custom-button{
       position: absolute;
-      top: 255px;
+      top: 75%;
       display: none;
       margin: 0 auto;
       &:hover{
@@ -60,6 +60,31 @@
   
       .price {
         width: 10%;
+      }
+    }
+
+    @media screen and (max-width:800px){
+      max-width: unset;
+      height: 550px;
+      &:hover{
+        transform: unset;
+      }
+      .custom-button{
+        
+        top: 80%;
+        display: flex;
+        margin: 0 auto;
+        &:active{
+          transform: none;
+         box-shadow: none;
+         background-color: black;
+         color: white;
+      }
+      &:hover{
+        background-color: black;
+        color: white;
+      }
+
       }
     }
   }

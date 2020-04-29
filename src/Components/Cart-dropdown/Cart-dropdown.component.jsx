@@ -24,18 +24,27 @@ const CartDropdown = ({ cartItems, sumItems, dispatch, isHidden }) => {
             }
           dispatch(toggleCartHidden())
         }
+        const escFunction = (event) =>{
+            if(event.keyCode === 27){
+                dispatch(toggleCartHidden())
+            }
+        }
         
 
         if(isHidden){
-            document.addEventListener('click',handleClick)
+            document.addEventListener('mousedown',handleClick)
+            document.addEventListener('keydown' ,  escFunction)
         }else{
-            document.removeEventListener("click", handleClick)
+            document.removeEventListener("mousedown", handleClick)
+            document.removeEventListener('keydown' , escFunction)
         }
      
         return () => {
-            document.removeEventListener("click", handleClick)
+            document.removeEventListener("mousedown", handleClick)
+            document.removeEventListener('keydown' , escFunction)
+
         };
-    }, [isHidden,dispatch])
+    })
 
    
   

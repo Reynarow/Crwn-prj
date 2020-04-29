@@ -43,7 +43,7 @@ export const CustomButtonContainer = styled.button`
 
 `
 export const SpinnerIcon = styled.i`
-  display: inline-block;
+  display: inline-flex;
   width: 23px;
   height: 23px;
   border: 3px solid rgba(195, 195, 195, 0.6);
