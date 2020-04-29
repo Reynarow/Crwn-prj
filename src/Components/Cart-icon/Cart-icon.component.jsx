@@ -10,7 +10,7 @@ import './Cart-icon.styles.scss';
 
 const CartIcon = ({ toggleCartHidden, itemCount}) => (
 
-    <div className="cart-icon" onMouseDown={toggleCartHidden}>
+    <div className="cart-icon" onMouseUp={toggleCartHidden}>
         <ShoppingIcon className="shopping-icon" />
         <span className="item-count">{itemCount}</span>
     

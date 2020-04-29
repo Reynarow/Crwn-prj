@@ -15,64 +15,65 @@ const CartDropdown = ({ cartItems, sumItems, dispatch, isHidden }) => {
 
     const node = useRef();
 
-    
+
 
     useEffect(() => {
         const handleClick = (event) => {
             if (node.current.contains(event.target)) {
                 return
             }
-          dispatch(toggleCartHidden())
+            dispatch(toggleCartHidden())
         }
-        const escFunction = (event) =>{
-            if(event.keyCode === 27){
+        const escFunction = (event) => {
+            if (event.keyCode === 27) {
                 dispatch(toggleCartHidden())
             }
         }
-        
 
-        if(isHidden){
-            document.addEventListener('mousedown',handleClick)
-            document.addEventListener('keydown' ,  escFunction)
-        }else{
-            document.removeEventListener("mousedown", handleClick)
-            document.removeEventListener('keydown' , escFunction)
+
+        if (isHidden) {
+            document.addEventListener('click', handleClick)
+            document.addEventListener('keydown', escFunction)
+        } else {
+            document.removeEventListener("click", handleClick)
+            document.removeEventListener('keydown', escFunction)
         }
-     
+
         return () => {
-            document.removeEventListener("mousedown", handleClick)
-            document.removeEventListener('keydown' , escFunction)
+            document.removeEventListener("click", handleClick)
+            document.removeEventListener('keydown', escFunction)
 
         };
     })
 
-   
-  
 
-  
+
+
+
 
     return (
-        
-        <div ref={node} className={'cart-dropdown '}>
-            <div className="cart-items">
-                {
-                    cartItems.length ?
-                        cartItems.map(cartItem => <CartItems key={cartItem.id} item={cartItem} />)
+        <div className="overlay-dropdown">
+            <div ref={node} className={'cart-dropdown '}>
+                <div className="cart-items">
+                    {
+                        cartItems.length ?
+                            cartItems.map(cartItem => <CartItems key={cartItem.id} item={cartItem} />)
 
-                        :
-                        <span className="no-item">there is no item yet reza	&nbsp;:)</span>
-                }
+                            :
+                            <span className="no-item">there is no item yet reza	&nbsp;:)</span>
+                    }
+                </div>
+                <span className="items-price">Total: ${sumItems}</span>
+
+                <Link
+                    to='/checkout' style={{ width: '80%' }}
+                    onClick={() => { dispatch(toggleCartHidden()) }}
+                >
+                    <CustomButton style={{ width: '100%' }} >CHECK OUT</CustomButton>
+                </Link>
             </div>
-            <span className="items-price">Total: ${sumItems}</span>
-
-            <Link
-                to='/checkout' style={{width:'80%'}}
-                onClick={() => { dispatch(toggleCartHidden()) }}
-            >
-                <CustomButton style={{width:'100%'}} >CHECK OUT</CustomButton>
-            </Link>
-        </div>
-
+            </div>
+      
     )
 }
 

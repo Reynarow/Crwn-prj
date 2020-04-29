@@ -9,21 +9,34 @@ export const ItemContainer = styled.div`
     justify-content:space-between;
     margin:auto;
     width:65vw;
-    height:90vh;
+    min-height:90vh;
     margin-top:20px;
     border:1px solid gray;
     border-radius:10px;
+    
+    @media screen and (max-width:800px) {
+        width:95vw;
+        justify-content:center;
+        flex-direction:column-reverse;
+        align-items:center;
+        padding:10px
+    }
 `
 
 export const ImageContainer = styled.div `
    display:flex; 
-    width:30%;
-    height:65vh;
+    width:50%;
+    height:85vh;
     min-height:300px;
     min-width:200px;
     border-radius:15px;
-    margin:auto;
+    margin:20px;
     overflow:hidden;
+    align-items:flex-end;
+    @media screen and (max-width:800px) {
+        width:80vw;
+        
+    }
     
 `
 
@@ -40,7 +53,11 @@ export const DetailsContainer = styled.div `
     display:flex;
     flex-direction:column;
     width:55%;
-    
+    @media screen and (max-width:800px) {
+        width:100%;
+        
+    }
+  
 `
 
 export const Details = styled.div `
@@ -65,5 +82,8 @@ export const Details = styled.div `
             
         }
    
-    
+        @media screen and (max-width:800px) {
+        width:80%;
+        
+    }
 `
