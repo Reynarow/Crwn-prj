@@ -14,6 +14,16 @@
 
     @media screen and (max-width:800px){
         width: 100%;
-        margin-bottom: 30%;;
+        margin-bottom: 30%;
+        justify-content: center;
+        .buttons{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            button{
+                width: 90%;
+            }
+        }
     }
 }
