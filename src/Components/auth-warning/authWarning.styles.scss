@@ -1,72 +1,91 @@
-.warning-box{
+.warning-box {
     position: absolute;
-    top:7%;
+    top: 4%;
     left: 25%;
     display: flex;
     width: 40vw;
-    height:auto;
-    background-color: rgb(255, 255, 255);;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    ;
     opacity: 1;
     border: 1px solid rgb(253, 123, 71);
     border-radius: 10px;
     flex-direction: column;
-    color:rgb(253, 123, 71);
+    color: rgb(253, 123, 71);
     justify-content: center;
     align-items: center;
     z-index: 10;
-    &.fade-to-bottom{
+
+    &.fade-to-bottom {
         animation: fadeToBottom .3s ease-in-out;
     }
-    &.fade-to-top{
+
+    &.fade-to-top {
         animation: fadeToTop .3s ease-in-out;
     }
-    
 
-    h3{
-        margin:unset;
+
+    h3 {
+        margin: unset;
     }
-    .message{
-       
-        padding:10px;
-        color:rgb(250, 103, 44);
+
+    .message {
+
+        padding: 10px;
+        color: rgb(250, 103, 44);
         font-size: 20px;
-  
+
 
     }
-    .dismiss-button{
-        background-color:rgb(240, 73, 6);
-        color:white;
+
+    .dismiss-button {
+        background-color: rgb(240, 73, 6);
+        color: white;
         border: 1px solid rgb(250, 103, 44);
-        border-radius: 10px;
-        padding: 3px 7px;
+        border-radius: 25px;
+        padding: 7px 10px;
         margin: 5px 0px;
+        cursor: pointer;
+        outline: none;
     }
+
     @media screen and (max-width:800px) {
-       position: fixed;
+        position: fixed;
         width: 67%;
         left: 20%;
-        top:4%;
+        top: 4%;
 
     }
 
-}
 
+@keyframes fadeToBottom {
+    from {
+        top: 0;
+        opacity: 0;
 
-@keyframes fadeToBottom{
-    from{
-        top:0;
-        opacity:0;
-    }to{
-        top:7%;
+    }
+
+    to {
+        top: 4%;
         opacity: .8;
+
+
     }
+
 }
-@keyframes fadeToTop{
-    from{
-        top:7%;
+
+@keyframes fadeToTop {
+    from {
+        top: 4%;
         opacity: .8;
-    }to{
-       top:0;
-       opacity: 0;
+
+
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
     }
 }
+}
+
