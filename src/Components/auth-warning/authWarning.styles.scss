@@ -42,8 +42,10 @@
         margin: 5px 0px;
     }
     @media screen and (max-width:800px) {
+       position: fixed;
         width: 67%;
         left: 20%;
+        top:4%;
 
     }
 
