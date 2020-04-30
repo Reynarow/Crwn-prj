@@ -21,8 +21,8 @@ const AuthWarning = ({ error , cleanError }) => {
         
         return () =>{
            
-            clearInterval(Fadeinterval,cleanErrorInterval)
-          
+            clearInterval(Fadeinterval)
+            clearInterval(cleanErrorInterval)
         }
     }, [])
 
@@ -33,6 +33,7 @@ const AuthWarning = ({ error , cleanError }) => {
             <div className="message">
                 {error.message}
             </div>
+            <button className="dismiss-button" onClick={cleanError} >dismiss</button>
         </div>)
 
 }

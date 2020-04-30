@@ -6,7 +6,7 @@
     width: 40vw;
     height:auto;
     background-color: rgb(255, 255, 255);;
-    opacity: .8;
+    opacity: 1;
     border: 1px solid rgb(253, 123, 71);
     border-radius: 10px;
     flex-direction: column;
@@ -33,9 +33,17 @@
   
 
     }
+    .dismiss-button{
+        background-color:rgb(240, 73, 6);
+        color:white;
+        border: 1px solid rgb(250, 103, 44);
+        border-radius: 10px;
+        padding: 3px 7px;
+        margin: 5px 0px;
+    }
     @media screen and (max-width:800px) {
-        width: 60%;
-        
+        width: 67%;
+        left: 20%;
 
     }
 
