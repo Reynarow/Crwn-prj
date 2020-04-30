@@ -19,3 +19,8 @@ export const selectSignUpLoading = createSelector(
     [selectUser],
     user=> user.signUpLoading
 )
+
+export const selectError = createSelector(
+    [selectUser],
+    user => user.error
+)

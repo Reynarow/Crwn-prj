@@ -15,6 +15,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
 
             return {
                 ...state,
+                error:null,
                 signInLoading: true
             }
 
@@ -45,6 +46,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
             case userActionTypes.SIGN_UP_START:
                 return{
                     ...state,
+                    error:null,
                     signUpLoading:true
                 }
             case userActionTypes.SIGN_UP_SUCCESS:
@@ -52,6 +54,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
                     ...state,
                     signUpLoading:false
                 }    
+                case userActionTypes.SET_ERROR_NULL:
+                    return{
+                        ...state,
+                        error:null,
+                    }
 
         default:
             return state;

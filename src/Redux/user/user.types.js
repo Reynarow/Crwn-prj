@@ -11,6 +11,7 @@ export const userActionTypes = {
     SIGN_UP_START:'SIGN_UP_START',
     SIGN_UP_SUCCESS:'SIGN_UP_SUCCESS',
     SIGN_UP_FAILURE:'SIGN_UP_FAILURE',
+    SET_ERROR_NULL:'SET_ERROR_NULL',
     
   
 }

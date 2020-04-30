@@ -57,3 +57,7 @@ export const signUpFailure = (error) =>({
     type:userActionTypes.SIGN_UP_FAILURE,
     payload:error
 })
+
+export const setErrorNull = () =>({
+    type:userActionTypes.SET_ERROR_NULL,
+})

@@ -23,7 +23,7 @@ const SignIn = ({ emailSignInStart, loading, googleSignInStart }) => {
         emailSignInStart(email, password);
 
         setUserCredential({
-            email: '', password: '',
+           ...userCredential, password: '',
         })
     }
 

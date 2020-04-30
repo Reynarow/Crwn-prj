@@ -5,9 +5,10 @@ import HomePage from "./Pages/HomePage/HomePage.component";
 import ShopPage from "./Pages/ShopPage/ShopPage.component"
 import SignInSignUpPage from "./Pages/Sign-in-Sign-up/Sign-in-Sign-up.component";
 import CheckOutPage from './Pages/CheckOutPage/CheckOutPage.component';
+import AuthWarning from './Components/auth-warning/authWarning.component';
 
 import { selectShopCollectionsArray } from './Redux/shop/shop.selector';
-import { selectCurrentUser } from "./Redux/user/user.selector";
+import { selectCurrentUser ,selectError } from "./Redux/user/user.selector";
 
 import { checkUserSession } from './Redux/user/user.action'
 import { hiddenCartAtFirst } from './Redux/cart/cart.action'
@@ -26,7 +27,7 @@ import GlobalStyle from './global.styles';
 
 
 
-const App = ({ checkUserSession, currentUser, hiddenCartAtFirst }) => {
+const App = ({ checkUserSession, currentUser, hiddenCartAtFirst,error}) => {
 
   useEffect(() => {
     checkUserSession()
@@ -40,6 +41,7 @@ const App = ({ checkUserSession, currentUser, hiddenCartAtFirst }) => {
     <div>
       <GlobalStyle/>
       <Header />
+      {error&&<AuthWarning error={error}/>}
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
@@ -56,12 +58,14 @@ const App = ({ checkUserSession, currentUser, hiddenCartAtFirst }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  collection: selectShopCollectionsArray
+  collection: selectShopCollectionsArray,
+  error: selectError
 })
 
 const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession()),
   hiddenCartAtFirst: () => dispatch(hiddenCartAtFirst())
+  
 })
 
 
