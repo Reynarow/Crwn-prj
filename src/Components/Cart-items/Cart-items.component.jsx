@@ -12,7 +12,7 @@ const CartItems = ({ item, removeItem }) => {
     return (
         <div className="wrapper" >
             <div className="cart-item">
-                <div className="remove-button" onClick={() => removeItem(item)} >&#x2715; </div>
+                <div className="remove-button" onMouseDown={() => removeItem(item)} >&#x2715; </div>
                 <img src={imageUrl} alt="item" />
                 <div className="item-details">
                     <span className="name">{name}</span>
