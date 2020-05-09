@@ -8,7 +8,7 @@ import './homePage-image.styles.scss';
 const HomePageImage = () => {
     return (
         <section className="avatar-wrapper">
-            <img className="avatar-image" src={require('/home/reynarow/React-projects/crwn-prj/src/Components/assets/images/crown.jpg')} alt='CrwnShop' />
+            <img className="avatar-image" src='https://i.imgur.com/BVehQTe.jpg' alt='CrwnShop' />
             <div className="header">
                 <h1 className="header-main">Crwn Shop </h1>
                 <span className="header-submain">shop for clothing</span>
