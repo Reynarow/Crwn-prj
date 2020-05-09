@@ -2,32 +2,53 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const OptionContainerStyles = css`
-  padding: 10px 15px;
-  
+  padding: 10px 25px;
+  border:1px solid transparent;
+  border-radius:5px;
+  margin-left:15px;
+
+  &:last-child{
+    border:unset;
+    &:hover{
+            background-color:unset;
+          color:unset;
+          }
+  }
         transition: all 0.2s ease-out;
         
         
         
         &:hover{
-          transform: translateY(-3.5px);
-          
-         
+          background-color:black;
+          color:white;
         }
-        &:active {
-          transform: translateY(0px);
-        } 
-
+     
         @media screen and (max-width:800px){
-          padding:10px 7px;
+          padding:2px 6px;
+          margin-left:unset;
+          font-size:18px;
+          &:last-child{
+            padding: 0px;
+          }
         }
 `
 
 export const HeaderContainer = styled.nav`
-    height: 70px;
-    width: 100%;
+    height: 55px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
+    padding: 0 30px;
     margin-bottom: 25px;
+    position:fixed;
+    z-index:20;
+   background-image:linear-gradient(white 95%,transparent);
+    opacity:.8;
+    top:0;
+    right:0;
+    @media screen and (max-width: 800px) {
+      height:40px;
+    }
 `;
 
 export const LogoContainer = styled(Link)`
@@ -43,18 +64,18 @@ export const LogoContainer = styled(Link)`
 
       @media screen and (max-width:800px){
         width:40px;
-        margin-top:20px;
+        margin-top:5px;
         padding:unset;
         height:70%;
       }
 `
 export const OptionsContainer = styled.ul`
-      width: 50%;
+      width: 80%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      margin-top: 15px;
+      margin-top: 0;
       font-size: 20px;
 
       @media screen and (max-width:800px){

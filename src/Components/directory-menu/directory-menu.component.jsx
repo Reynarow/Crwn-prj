@@ -10,13 +10,13 @@ import {connect } from 'react-redux';
 
 
 const Directory = ({sections}) =>(
-                <div className="directory-menu">
+                <section className="directory-menu">
                 {
                     sections.map(({id,...theOtherSections}) => (
                         <MenuItem key= {id} {...theOtherSections} />
                     ))
                 }
-                </div>
+                </section>
         );
     
 

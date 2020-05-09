@@ -4,18 +4,24 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 body{
-    padding: 20px 60px;
+  width:100vw;
+    padding: 0px 60px;
     font-family: 'Open Sans Condensed','Roboto',sans-serif;
 
     @media screen and (max-width:800px){
-        padding:10px;
+        padding:0 10px;
     }
 }
 
 
 body::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
+    height:0px;
+    opacity:.5;
+    transition: all 1s;
+    
   }
+
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.212); 
     border-radius: 10px;

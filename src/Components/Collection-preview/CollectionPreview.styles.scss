@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    margin-top:10%;
     position: relative;
+    @media screen and (max-width : 800px) {
+      margin: 20%;
+    }
     .title {
       display: inline-block;
       font-size: 28px;
@@ -22,7 +26,7 @@
     .preview {
     
       display: grid;
-      grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+      grid-template-columns: repeat(auto-fill , minmax(250px,1fr));
       gap: 10px;
       
     
@@ -35,18 +39,18 @@
   @keyframes moveInLeft {
     0% {
       opacity: 0;
-      transform: translateX(90vw) scale(2);
+      transform: scale(2);
       
       
     }
     80%{
       
-      transform: translateX(-2vw);
+      transform:scale(.5);
       
     }
     100%{
       opacity: 1;
-      transform: translateX(0) scale(1);
+      transform:  scale(1);
       
     }
   }
