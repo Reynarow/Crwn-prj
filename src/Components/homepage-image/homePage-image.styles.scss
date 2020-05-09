@@ -1,9 +1,12 @@
 .avatar-wrapper{
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     margin-bottom: 30px;;
     position: relative;
-    background-color: #a3c3d6;
+    @media screen and (max-width:800px){
+        height: auto;
+    }
+   
 .header{
     position: absolute;
     display: flex;
