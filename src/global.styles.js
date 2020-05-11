@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 body{
   width:100vw;
     padding: 0px 60px;
-    font-family: 'Open Sans Condensed','Roboto',sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
 
     @media screen and (max-width:800px){
         padding:0 10px;

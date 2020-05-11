@@ -43,7 +43,7 @@ export const HeaderContainer = styled.nav`
     position:fixed;
     z-index:20;
    background-image:linear-gradient(white 95%,transparent);
-    opacity:.8;
+    opacity:.3;
     top:0;
     right:0;
     @media screen and (max-width: 800px) {
