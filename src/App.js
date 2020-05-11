@@ -54,7 +54,7 @@ const App = ({ checkUserSession, currentUser, hiddenCartAtFirst, error }) => {
           <Switch>
 
             <Route exact path='/' component={HomePage} />
-            <Route path='/shop' component={ShopPage} />
+              <Route path='/shop' component={ShopPage} />
             <Route exact path='/signin'
               render={() => currentUser ? (<Redirect to='/' />) : (<SignInSignUpPage />)} />
             <Route exact path='/checkout' component={CheckOutPage} />

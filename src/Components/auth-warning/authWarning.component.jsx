@@ -24,7 +24,7 @@ const AuthWarning = ({ error , cleanError }) => {
             clearInterval(Fadeinterval)
             clearInterval(cleanErrorInterval)
         }
-    }, [])
+    }, [cleanError])
 
 
     return (
