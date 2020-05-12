@@ -1,11 +1,11 @@
 .overlay-dropdown {
   position: absolute;
-  top: 100px;
-  right: 5%;
+  top: 68px;
+  right: 3%;
   z-index: 3;
   min-width: 100vw;
   min-height: 100vh;
-
+  opacity: 2 ;
   .cart-dropdown {
   position: absolute;
     width: 240px;
@@ -21,7 +21,7 @@
 
     align-items: center;
     justify-content: center;
-    opacity: 1;
+  background-color: rgba(255,255,255,0.8 );
     border-radius: 5px;
 
     @keyframes fade {
