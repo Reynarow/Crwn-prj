@@ -1,11 +1,12 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 
 
 const GlobalStyle = createGlobalStyle`
 body{
   width:100vw;
-    padding: 0px 60px;
+  position:relative;
+    padding: 0px;
     font-family: 'Open Sans Condensed', sans-serif;
 
     @media screen and (max-width:800px){
