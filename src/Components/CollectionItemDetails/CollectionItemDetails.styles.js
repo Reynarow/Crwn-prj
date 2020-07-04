@@ -23,7 +23,7 @@ export const ItemContainer = styled.div`
     }
 `
 
-export const ImageContainer = styled.div `
+export const ImageContainer = styled.div`
    display:flex; 
     width:50%;
     height:85vh;
@@ -40,7 +40,7 @@ export const ImageContainer = styled.div `
     
 `
 
-export const Image = styled.div `
+export const Image = styled.div`
     width:100%;
     height:100%;
     background-size:cover;
@@ -49,7 +49,7 @@ export const Image = styled.div `
    
 `
 
-export const DetailsContainer = styled.div `
+export const DetailsContainer = styled.div`
     display:flex;
     flex-direction:column;
     width:55%;
@@ -60,7 +60,7 @@ export const DetailsContainer = styled.div `
   
 `
 
-export const Details = styled.div `
+export const Details = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -74,6 +74,7 @@ export const Details = styled.div `
         font-weight:bold;
         padding: 20px 20px 0px;
         margin:16px 0px 2px;
+        text-align:center;
        
     }
     .price{
