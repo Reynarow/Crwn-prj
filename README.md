@@ -9,3 +9,4 @@ and i used firebase for authentication, database, ..
 
 with this link you could see this website live:
 https://crwnshop.now.sh/
+از فیلتر شکن استفاده کنید(تحریم firebase)
